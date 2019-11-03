@@ -5,7 +5,6 @@ options:
   - BUILD_ID=$BUILD_ID
   - PROJECT_ID=$PROJECT_ID
 steps:
-- name: 'gcr.io/my-web-apis/inspect-builder'
 - name: 'gcr.io/my-web-apis/install-utf8-builder'
 - name: 'gcr.io/cloud-builders/wget'
   entrypoint: bash
@@ -16,5 +15,6 @@ steps:
   args: ['ftp://ftp.monash.edu/pub/nihongo/examples.utf.gz']
 - name: 'gcr.io/my-web-apis/gunzip-builder'
   args: ['-k', 'examples.utf.gz']
+- name: 'gcr.io/my-web-apis/inspect-builder'
 - name: 'gcr.io/my-web-apis/upload-gs-builder'
 
