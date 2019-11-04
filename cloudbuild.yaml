@@ -4,6 +4,7 @@ options:
   - SHORT_SHA=$SHORT_SHA
   - BUILD_ID=$BUILD_ID
   - PROJECT_ID=$PROJECT_ID
+  - PACKAGE_VERSION=1.0.0
 steps:
 - name: 'gcr.io/my-web-apis/install-utf8-builder'
 - name: 'gcr.io/cloud-builders/wget'
@@ -15,6 +16,5 @@ steps:
   args: ['ftp://ftp.monash.edu/pub/nihongo/examples.utf.gz']
 - name: 'gcr.io/my-web-apis/gunzip-builder'
   args: ['-k', 'examples.utf.gz']
-#- name: 'gcr.io/my-web-apis/inspect-builder'
 - name: 'gcr.io/my-web-apis/upload-gs-builder'
 
