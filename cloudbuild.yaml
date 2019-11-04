@@ -8,13 +8,13 @@ options:
 steps:
 - name: 'gcr.io/my-web-apis/install-utf8-builder'
 - name: 'gcr.io/cloud-builders/wget'
-  entrypoint: bash
-  args: ['-c', 'mkdir /upload']
-- name: 'gcr.io/cloud-builders/wget'
   args: ['http://www.edrdg.org/examples/examples_date']
 - name: 'gcr.io/cloud-builders/wget'
   args: ['ftp://ftp.monash.edu/pub/nihongo/examples.utf.gz']
 - name: 'gcr.io/my-web-apis/gunzip-builder'
   args: ['-k', 'examples.utf.gz']
+- name: 'gcr.io/my-web-apis/dotnet-build-builder'
+- name: 'gcr.io/cloud-builders/dotnet'
+  args: ['out/Tanaka.dll', 'examples.utf']
 - name: 'gcr.io/my-web-apis/upload-gs-builder'
 
