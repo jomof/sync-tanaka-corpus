@@ -4,6 +4,8 @@ options:
   - SHORT_SHA=$SHORT_SHA
   - BUILD_ID=$BUILD_ID
   - PROJECT_ID=$PROJECT_ID
+  # Create a new tag:
+  # git tag 1.0.3 ; git push origin --tags
   - PACKAGE_VERSION=$TAG_NAME
 steps:
 - name: 'gcr.io/my-web-apis/install-utf8-builder'
