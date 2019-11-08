@@ -18,5 +18,6 @@ steps:
 - name: 'gcr.io/my-web-apis/dotnet-build-builder'
 - name: 'gcr.io/cloud-builders/dotnet'
   args: ['out/Tanaka.dll', 'examples.utf']
+
 - name: 'gcr.io/my-web-apis/upload-gs-builder'
 
